@@ -14,7 +14,7 @@ module.exports = async function(start, maxDepth = config.get('depth'), filter = 
     const dirFiles = await fs.readdir(fullPath)
 
     for (let file of dirFiles) {
-      if (filter(file) === false) continue
+      if (filter(file, fullPath) === false) continue
 
       const filePath = path.resolve(fullPath, file)
 

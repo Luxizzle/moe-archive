@@ -6,9 +6,11 @@ const config = moe.config
 
 module.exports = new Listr([
   { title: 'Read file structure', 
-    async task(ctx) {
-      ctx.files = await moe.walk(process.cwd(), ctx.depth, (file) => {
-        if (ctx.verbose) ctx.output = file
+    async task(ctx, task) {
+      task.title = `${task.title} (depth: ${ctx.depth})`
+
+      ctx.files = await moe.walk(process.cwd(), ctx.depth, (file, fullPath) => {
+        if (ctx.verbose) task.output = path.relative(process.cwd(), fullPath)
         
         if (file.startsWith('.')) return false
 

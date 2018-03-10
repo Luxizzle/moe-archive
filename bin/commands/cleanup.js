@@ -6,6 +6,10 @@ const config = require('../../src/config')
 
 const Listr = require('listr')
 
+function parseIntStrict(integer) {
+  return /^-?\d+$/.test(integer) ? parseInt(integer, 10) : undefined
+}
+
 module.exports = function(program) {
 
   program
@@ -13,7 +17,7 @@ module.exports = function(program) {
       .alias('clean')
       .alias('c')
     .description('Find duplicate files')
-    .option('-d, --depth <n>', 'recursive depth', parseInt, config.get('depth'))
+    .option('-d, --depth <n>', 'recursive depth', parseIntStrict, config.get('depth'))
     .option('-p, --pretty', 'pretty archive file, slower')
     .option('-v, --verbose', 'verbose output')
     .option('-s, --skip', 'Skip updating archive and duplicates')
