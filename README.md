@@ -33,7 +33,7 @@ Finds duplicates and outputs results into `.duplicates.yml`
 
 ### cleanup
 ```sh
-$ moe find-duplicates
+$ moe cleanup
 ```
 
 Cleans up duplicates
