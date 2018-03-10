@@ -19,7 +19,7 @@ module.exports = new Listr([
 
           if (ctx.verbose) task.output = `${file1.hash} & ${file2.hash}`
 
-          if (file1.hash === file2.hash) {
+          if (file1.hash === file2.hash && file1.size === file2.size) {
             found++
             dupes[file1.hash] = dupes[file1.hash] || []
             dupes[file1.hash].push(file2)

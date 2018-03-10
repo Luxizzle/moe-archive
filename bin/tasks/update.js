@@ -31,12 +31,17 @@ module.exports = new Listr([
 
         let original = await moe.archive.get.byPath(null, file)
 
+        let stat = await fs.stat(file)
+
         fileData.push({
           path: file,
+          size: stat.size,
           hash: await moe.hash(file, config.get('algorithm')),
           tags: original ? original.tags : []
         })
       }
+
+      fileData.sort((a, b) => b.size - a.size)
       ctx.files = fileData
   } },
 

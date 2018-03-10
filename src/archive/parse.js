@@ -23,8 +23,9 @@ module.exports = async function parse(str) {
       line = line.split('|').map((part) => part.trim())
       return {
         path: line[0].trim(),
-        hash: line[1].trim(),
-        tags: line[2].trim().split(',').map((tag) => tag.trim()).filter((tag) => tag.length > 0)
+        size: parseInt(line[1].trim()),
+        hash: line[2].trim(),
+        tags: line[3].trim().split(',').map((tag) => tag.trim()).filter((tag) => tag.length > 0)
       }
     })
 
