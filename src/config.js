@@ -1,7 +1,7 @@
 const Conf = require('conf')
 
 const defaultConfig = {
-  algorithm: 'md5',
+  algorithm: 'sha256',
   depth: 5
 }
 

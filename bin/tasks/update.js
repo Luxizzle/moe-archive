@@ -27,7 +27,7 @@ module.exports = new Listr([
     async task(ctx, task) {
       let fileData = []
       for (let file of ctx.files) {
-        if (ctx.verbose) task.output = file
+        if (ctx.verbose) task.output = `${fileData.length}/${ctx.files.length} - ${file}`
 
         let original = await moe.archive.get.byPath(null, file)
 
@@ -45,8 +45,7 @@ module.exports = new Listr([
       ctx.archiveData = await moe.archive.stringify(
         ctx.files, 
         { 
-          algorithm: config.get('algorithm'), 
-          depth: ctx.depth 
+          algorithm: config.get('algorithm')
         }, 
         { 
           pretty: ctx.pretty 
