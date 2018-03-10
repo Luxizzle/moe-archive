@@ -1,7 +1,7 @@
 {
   "name": "moe-archive",
   "version": "0.0.1",
-  "description": "Smart file archiving",
+  "description": "Tag based file indexer and duplicate finder",
   "main": "src/index.js",
   "scripts": {
     "test": "ava"
