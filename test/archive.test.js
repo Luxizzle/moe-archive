@@ -8,13 +8,13 @@ const testArchivePretty = fs.readFileSync(path.join(__dirname, 'files', 'archive
 const testArchive = fs.readFileSync(path.join(__dirname, 'files', 'archive-test.moe-archive'), 'utf8')
 
 test('stringify file', async t => {
-  t.is(archive.stringify(testJson.data, testJson.structure, { pretty: false }), testArchive)
+  t.is(await archive.stringify(testJson.data, testJson.structure, { pretty: false }), testArchive)
   
-  t.is(archive.stringify(testJson.data, testJson.structure, { pretty: true }), testArchivePretty)
+  t.is(await archive.stringify(testJson.data, testJson.structure, { pretty: true }), testArchivePretty)
 })
 
 test('parse data', async t => {
-  t.deepEqual(archive.parse(testArchive), testJson)
+  t.deepEqual(await archive.parse(testArchive), testJson)
 
-  t.deepEqual(archive.parse(testArchivePretty), testJson)
+  t.deepEqual(await archive.parse(testArchivePretty), testJson)
 })

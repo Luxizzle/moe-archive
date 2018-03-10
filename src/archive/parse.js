@@ -13,7 +13,7 @@ path | hash | tags
 
 const yaml = require('js-yaml')
 
-module.exports = function parse(str) {
+module.exports = async function parse(str) {
   str = str.trim().split('---')
 
   let structure = yaml.safeLoad(str[0].trim())// JSON.parse(str[0].trim())
@@ -24,7 +24,7 @@ module.exports = function parse(str) {
       return {
         path: line[0].trim(),
         hash: line[1].trim(),
-        tags: line[2].trim().split(',').map((tag) => tag.trim())
+        tags: line[2].trim().split(',').map((tag) => tag.trim()).filter((tag) => tag.length > 0)
       }
     })
 

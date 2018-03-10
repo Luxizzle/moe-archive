@@ -4,6 +4,8 @@ const moe = require('../src')
 const config = moe.config
 const program = require('commander')
 
-require('./commands/archive')(program, moe, config)
+require('./commands/update')(program)
+require('./commands/find-duplicates')(program)
+require('./commands/cleanup')(program)
 
 program.parse(process.argv)

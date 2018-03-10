@@ -1,6 +1,5 @@
 const walk = require('../src/walk')
 const path = require('path')
-const fs = require('fs-extra-promise')
 const test = require('ava')
 
 const walkResult = require('./files/walk.json')

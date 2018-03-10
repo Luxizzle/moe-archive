@@ -1,4 +1,5 @@
 module.exports = {
   parse: require('./parse'),
-  stringify: require('./stringify')
+  stringify: require('./stringify'),
+  get: require('./get')
 }

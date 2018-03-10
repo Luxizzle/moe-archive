@@ -15,7 +15,7 @@ const yaml = require('js-yaml')
 const stringWidth = require('string-width')
 const cloneDeep = require('lodash.clonedeep')
 
-module.exports = function stringify(data, structure, opts = {}) {
+module.exports = async function stringify(data, structure, opts = {}) {
   opts = Object.assign({
     pretty: false // make the file more readable
   }, opts)

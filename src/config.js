@@ -2,14 +2,15 @@ const Conf = require('conf')
 
 const defaultConfig = {
   algorithm: 'md5',
-  // small value to prove config is not new
-  init: true
+  depth: 5
 }
 
 const config = new Conf({
-  configName: 'moe-archive'
+  projectName: 'moe-archive'
 })
 
-if (config.has('init') === false) config.store = defaultConfig
+for (let key in defaultConfig) {
+  if (!config.has(key)) config.set(key, defaultConfig[key])
+}
 
 module.exports = config
