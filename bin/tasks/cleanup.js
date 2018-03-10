@@ -39,7 +39,7 @@ module.exports = new Listr([
 
       ctx.files = files
 
-      await fs.writeFile('.duplicates.tmp.json', JSON.stringify(ctx.files, null, '\t'), 'utf8')
+      //await fs.writeFile('.duplicates.tmp.json', JSON.stringify(ctx.files, null, '\t'), 'utf8')
   } },
 
   { title: 'Clean duplicates',
