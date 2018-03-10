@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const moe = require('../src')
+const config = moe.config
+const program = require('commander')
+
+require('./commands/archive')(program, moe, config)
+
+program.parse(process.argv)

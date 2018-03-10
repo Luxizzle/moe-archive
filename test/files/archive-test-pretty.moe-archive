@@ -1,0 +1,4 @@
+algorithm: md5
+---
+test.png | some_hash     | neko, cute, cat, sfw
+lewd.jpg | some_jpg_hash | nsfw, hot, :eyes:

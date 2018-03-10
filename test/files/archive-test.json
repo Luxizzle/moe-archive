@@ -1,0 +1,9 @@
+{
+  "structure": {
+    "algorithm": "md5"
+  },
+  "data": [
+    { "path": "test.png", "hash": "some_hash", "tags": ["neko", "cute", "cat", "sfw"] },
+    { "path": "lewd.jpg", "hash": "some_jpg_hash", "tags": ["nsfw", "hot", ":eyes:"] }
+  ]
+}
